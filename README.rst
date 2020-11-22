@@ -53,7 +53,7 @@ First, import the package:
 
 .. code-block:: python
 
-    import fun
+    from fun import et
 
 Try sending some messages. The communicator *should* work regardless of whether you are inside a
 company's managed network or not, assuming you are running from an authenticated session.
@@ -61,13 +61,13 @@ company's managed network or not, assuming you are running from an authenticated
 .. code-block:: python
 
     # Using arbitrary phone numbers or emails:
-    fun.et.phone_home('Howdy, this is my message to you.', '734-555-5555', subject='Test message from Chris')
+    et.phone_home('Howdy, this is my message to you.', '734-555-5555', subject='Test message from Chris')
 
     # Using the JSON directory in fun/communications/contact_list.json to target users:
-    fun.et.phone_home('There can never be too much foo.', 'joe', subject='Foo')
+    et.phone_home('There can never be too much foo.', 'joe', subject='Foo')
 
     # Using the JSON directory to target groups:
-    fun.et.phone_home('Fear is the mindkiller.', ['admin', 'physics'], subject='I must not fear')
+    et.phone_home('Fear is the mindkiller.', ['admin', 'physics'], subject='I must not fear')
 
 When using users or groups from the JSON directory, by default E.T. will send messages via email and SMS
 to each targeted person. You can modify this behavior by toggling the boolean options ``disable_sms`` and
@@ -84,10 +84,10 @@ Let's use the directory and select either email or SMS:
 .. code-block:: python
 
     # Only send emails to the group 'physics', no SMS:
-    fun.et.phone_home('Need those reports today.', 'physics', subject='TPS Reports', disable_sms=True)
+    et.phone_home('Need those reports today.', 'physics', subject='TPS Reports', disable_sms=True)
 
     # Only send SMS messages to the user 'joe', no emails:
-    fun.et.phone_home('There is no try.', 'joe', subject='Do or do not', disable_email=True)
+    et.phone_home('There is no try.', 'joe', subject='Do or do not', disable_email=True)
 
 
 
@@ -97,7 +97,7 @@ Finally, you can add attachments to emails:
 
     # Send email with attachment:
     target='/documents/tps_report.xlsx'     # A Path-like object
-    fun.et.phone_home('Check this out!', 'chris@somewhere.com', subject='Report', attachment=target)
+    et.phone_home('Check this out!', 'chris@somewhere.com', subject='Report', attachment=target)
 
 How to Have Fun with Fancy Printing!
 ------------------------------------
@@ -106,14 +106,16 @@ After importing the package, try printing some formatted text to the stdout cons
 
 .. code-block:: python
 
+    from fun import fancy_print
+
     # See the docstring of fancy_print() for description of all options.
-    fun.fancy_print('I like pretty things', fg='light_pink', bold=True, framed=True)
+    fancy_print('I like pretty things', fg='light_pink', bold=True, framed=True)
 
 Run the built-in demo to see everything the Fancy Printer can do:
 
 .. code-block:: python
 
     # Run the built-in demo
-    fun.fancy_print('Foo Fighters Rule', demo=True)
+    fancy_print('Foo Fighters Rule', demo=True)
 
 That's all for now. Be sure to have some Fun!
