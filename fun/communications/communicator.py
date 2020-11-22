@@ -44,6 +44,8 @@ INTERNAL_USER_PWD = None
 COMMUNICATOR_MSG_COLOR = 'light_cerulean'
 COMMUNICATOR_WARN_COLOR = 'yellow'
 
+EMAIL_SIGNATURE_LOGO_FILE = 'liveline_logo.png'
+
 root = Path(__file__).parent.absolute()
 
 
@@ -183,11 +185,13 @@ class Communicator(object):
             """.format(logo_cid=logo_cid[1:-1]), subtype='html')
 
             # Add logo to the HTML version
-            t = root / 'liveline_logo.png'
-            with open(t, 'rb') as img:
-                r = img.read()
-                # noinspection PyUnresolvedReferences
-                msg.get_payload()[1].add_related(r, 'image', 'png', cid=logo_cid)
+            if EMAIL_SIGNATURE_LOGO_FILE is not None:
+                t = root / EMAIL_SIGNATURE_LOGO_FILE
+                if t.exists():
+                    with open(t, 'rb') as img:
+                        r = img.read()
+                        # noinspection PyUnresolvedReferences
+                        msg.get_payload()[1].add_related(r, 'image', 'png', cid=logo_cid)
 
             # Optionally attach a file
             # First use mimetypes to try and guess content type based on file extension:
