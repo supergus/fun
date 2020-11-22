@@ -6,7 +6,7 @@ with open('README.rst', 'r') as fh:
 setuptools.setup(
     # Use VCS instead of MANIFEST to control included files & folders
     # Works for git and hg
-    use_scm_version=True,
+    use_scm_version=False,
     setup_requires=['setuptools_scm'],
     include_package_data=True,  # Needed if using old MANIFEST.in?
 
