@@ -16,7 +16,7 @@ Contact `me`_ if you have any questions. This is a fun project (obviously!) and 
 guarantee a response, sorry.
 
 .. _GitHub repo: https://github.com/supergus/fun
-.. _repo admin: mailto:christopher.couch@gmail.com
+.. _me: mailto:christopher.couch@gmail.com
 
 Package Contents
 ----------------
