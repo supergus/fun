@@ -7,8 +7,11 @@ The ``fun`` package contains utilities that are entertaining yet somewhat useful
 Installation
 -------------
 
-To install locally in 'editable mode' with all dependencies, clone the `GitHub repo`_
-and run:
+To install normally:
+
+    ``$ pip install fun-supergus``
+
+To install locally in 'editable mode', clone the `GitHub repo`_ and run:
 
     ``$ pip install -e /path/to/package/fun``
 
@@ -25,6 +28,11 @@ Configuration
 
 The communications module requires an email account to establish an SMTP session.
 You must configure the credentials listed at the top of ``fun/communications/communicator.py``.
+
+If you installed normally, you must navigate to the site-packages library of your current
+Python environment and edit the file.
+
+If you installed in editable mode, you may prefer to edit the cloned repo using your favorite IDE.
 
 Package Contents
 ----------------
