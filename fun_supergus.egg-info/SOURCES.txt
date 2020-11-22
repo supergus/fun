@@ -1,6 +1,7 @@
 CHANGES.txt
 LICENSE
 README.rst
+scratch.py
 setup.py
 .eggs/README.txt
 .eggs/setuptools_scm-4.1.2-py3.7.egg/EGG-INFO/LICENSE

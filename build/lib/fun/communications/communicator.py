@@ -27,13 +27,13 @@ from fun.printing.formatted_console_print import fancy_print
 # https://support.google.com/mail/answer/7126229?visit_id=637161016079461373-4266744509&hl=en&rd=1
 EXTERNAL_HOST = 'smtp.gmail.com'
 EXTERNAL_PORT = 587
-EXTERNAL_USER_NAME = 'your_email@here'
-EXTERNAL_USER_PWD = 'your_pwd_here'
+EXTERNAL_USER_NAME = 'your_email@gmail.com'
+EXTERNAL_USER_PWD = 'your_pwd'
 
 # To send an email while inside your company's network
-INTERNAL_HOST = 'your_company.smtp.server.here'
+INTERNAL_HOST = 'smtp.your.company.ctb'
 INTERNAL_PORT = None
-INTERNAL_USER_NAME = 'yyour_company_email@here'
+INTERNAL_USER_NAME = 'your_email@your_company.tech'
 INTERNAL_USER_PWD = None
 
 
@@ -157,7 +157,7 @@ class Communicator(object):
             # Set msg parameters;
             # Note we will assign msg['To'] below when iterating over email addresses
             msg['From'] = self.sender_address
-            msg['Subject'] = subject.upper()
+            msg['Subject'] = subject.upper() if isinstance(subject, str) else None
 
             # Copy outgoing emails to cc list
             if isinstance(self.cc_email_list, list):
