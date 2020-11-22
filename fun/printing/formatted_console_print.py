@@ -337,7 +337,7 @@ def fancy_print(string=None, **kwargs):
         * black, white, dark_grey, medium_grey, light_grey
         * red, orange, yellow, chartreuse, green, cyan, cerulean, blue, purple, magenta, pink
         * dark, medium, and light versions of the colors, e.g. 'dark_red', 'medium_green', 'light_blue'
-        * Special "colors' with automatic formatting: 'hlink', 'warning'
+        * Special "colors' with automatic formatting: 'hlink', 'warning', 'error', 'normal'
 
     |
     **Formats available:**
