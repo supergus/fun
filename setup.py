@@ -11,8 +11,8 @@ setuptools.setup(
     include_package_data=True,  # Needed if using old MANIFEST.in?
 
     # Mandatory fields
-    name='liveline_fun',
-    # version='0.0.1.dev1',       # Does this overwrite version from VCS?
+    name='fun-supergus',
+    version='0.0.1',
     packages=setuptools.find_packages(),    # Builds & wheels are limited to pkgs specified here
 
     # Optional fields
@@ -23,27 +23,23 @@ setuptools.setup(
     description='Toolkit for various fun and useful tasks',
     long_description=long_description,
     long_description_content_type='text/x-rst',
-    url='https://github.com/cooper-standard/ll_fun',
+    url='https://github.com/supergus/fun',
 
     classifiers=[
         'Intended Audience :: Developers',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Programming Language :: Python :: 3.7',
-        'License :: None - Strictly proprietary and protected by copyright',
+        'License :: MIT',
         'Operating System :: OS Independent',
         'Development Status :: 3 - Alpha',
-        'Environment :: GPU :: NVIDIA CUDA :: 10.1',
         'Natural Language :: English',
     ],
 
-    keywords='liveline fun utilities',
+    keywords='fun utilities email SMS',
 
     python_requires='>=3.7',
-    # install_requires=['numpy', 'pandas', 'matplotlib', 'scikit_learn', 'statsmodels', 'scipy',
-    #                   'pytz', 'pycryptodome', 'psycopg2', 'tqdm', 'xlrd', 'XlsxWriter',
-    #                   'pywavelets', 'mpi4py', 'tensorflow', 'pydot'],
+
     project_urls={
-        'Company': 'https://www.liveline.tech',
-        'Source': 'https://github.com/cooper-standard/ll_fun',
+        'Source': 'https://github.com/supergus/fun',
     },
 )
