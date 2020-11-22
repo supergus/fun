@@ -44,7 +44,7 @@ INTERNAL_USER_PWD = None
 COMMUNICATOR_MSG_COLOR = 'light_cerulean'
 COMMUNICATOR_WARN_COLOR = 'yellow'
 
-EMAIL_SIGNATURE_LOGO_FILE = 'liveline_logo.png'
+EMAIL_SIGNATURE_LOGO_FILE = 'liveline_logo.png'  # Use None to disable
 
 root = Path(__file__).parent.absolute()
 
