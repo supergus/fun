@@ -15,7 +15,7 @@ from email.message import EmailMessage
 from email.utils import make_msgid
 
 # Be sure to install fun to your current VENV!
-from fun.printing.formatted_console_print import FancyPrinter
+from fun.printing.formatted_console_print import fancy_print
 
 
 # ==================================================================
@@ -44,7 +44,6 @@ INTERNAL_USER_PWD = None
 COMMUNICATOR_MSG_COLOR = 'light_cerulean'
 COMMUNICATOR_WARN_COLOR = 'yellow'
 
-p = FancyPrinter()
 root = Path(__file__).parent.absolute()
 
 
@@ -215,8 +214,8 @@ class Communicator(object):
 
                     # Console out
                     stdout_msg = f'COMMUNICATOR MESSAGE: Sending email to: '
-                    p.fancy_print(stdout_msg, fg=COMMUNICATOR_MSG_COLOR, end='')
-                    p.fancy_print(e, fg='hlink')
+                    fancy_print(stdout_msg, fg=COMMUNICATOR_MSG_COLOR, end='')
+                    fancy_print(e, fg='hlink')
 
                     # Update msg 'To:' field
                     if msg['To'] is not None:
@@ -231,7 +230,7 @@ class Communicator(object):
                         sess.send_message(msg)
                     except:
                         stdout_msg = f'COMMUNICATOR WARNING: Failed sending email message'
-                        p.fancy_print(stdout_msg, fg=COMMUNICATOR_WARN_COLOR)
+                        fancy_print(stdout_msg, fg=COMMUNICATOR_WARN_COLOR)
 
             # ============================================================
             # SMS
@@ -242,8 +241,8 @@ class Communicator(object):
 
                     # Console out
                     stdout_msg = f'COMMUNICATOR MESSAGE: Sending SMS message to: '
-                    p.fancy_print(stdout_msg, fg=COMMUNICATOR_MSG_COLOR, end='')
-                    p.fancy_print(m[0:3] + '.' + m[3:6] + '.' + m[6:10], fg='cerulean')
+                    fancy_print(stdout_msg, fg=COMMUNICATOR_MSG_COLOR, end='')
+                    fancy_print(m[0:3] + '.' + m[3:6] + '.' + m[6:10], fg='cerulean')
 
                     any_ok = False
                     candidates = list()
@@ -271,7 +270,7 @@ class Communicator(object):
 
                     if not any_ok:
                         stdout_msg = f'COMMUNICATOR WARNING: Failed sending SMS message'
-                        p.fancy_print(stdout_msg, fg=COMMUNICATOR_WARN_COLOR)
+                        fancy_print(stdout_msg, fg=COMMUNICATOR_WARN_COLOR)
 
         return
 
@@ -299,7 +298,7 @@ class Communicator(object):
             # We will use an external email account that requires a login.
 
             # msg = f'_setup_smtp_server(): Attempting to launch session as external machine...'
-            # p.fancy_print(msg, fg=COMMUNICATOR_MSG_COLOR, bold=True)
+            # fancy_print(msg, fg=COMMUNICATOR_MSG_COLOR, bold=True)
 
             self.host = EXTERNAL_HOST
             self.port = EXTERNAL_PORT
@@ -323,7 +322,7 @@ class Communicator(object):
             # Current user should already be authenticated.
 
             # msg = f'_setup_smtp_server(): Attempting to launch session as internal Cooper machine...'
-            # p.fancy_print(msg, fg=COMMUNICATOR_MSG_COLOR, bold=True)
+            # fancy_print(msg, fg=COMMUNICATOR_MSG_COLOR, bold=True)
 
             self.host = INTERNAL_HOST
             self.port = INTERNAL_PORT
@@ -334,10 +333,11 @@ class Communicator(object):
                 sess = smtplib.SMTP(self.host)
                 return sess
             except:
-                pass
+                msg = f'COMMUNICATOR WARNING: Could not establish SMTP connection. Check configuration.'
+                fancy_print(msg, fg=COMMUNICATOR_WARN_COLOR)
 
-        msg = f'Could not parse SMTP host target'
-        raise RuntimeError(msg)
+        msg = f'Could not establish SMTP connection'
+        raise ConnectionError(msg)
 
     def _get_contacts(self, tgt):
         """Reads contact information from a JSON contact file.
@@ -498,8 +498,8 @@ class Communicator(object):
 
     def _ensure_recipients_exist(self):
         if len(self.current_mobile_list) == 0 and len(self.current_email_list) == 0:
-            msg = f'COMMUNICATOR WARNING: No recipients identified.'
-            p.fancy_print(msg, fg=COMMUNICATOR_WARN_COLOR)
+            msg = f'COMMUNICATOR WARNING: No recipients identified. Check for valid phone/mobile.'
+            fancy_print(msg, fg=COMMUNICATOR_WARN_COLOR)
             return False
         else:
             return True
@@ -586,7 +586,7 @@ class Communicator(object):
             target = Path(target)
             if not target.exists():
                 msg = f'COMMUNICATOR WARNING: The file specified for attachment to email does not exist'
-                p.fancy_print(msg, fg=COMMUNICATOR_WARN_COLOR)
+                fancy_print(msg, fg=COMMUNICATOR_WARN_COLOR)
                 return False
         return True
 

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fun-supergus
-Version: 2020.11
+Version: 0.1.1
 Summary: Toolkit for various fun and useful tasks
 Home-page: https://github.com/supergus/fun
 Author: Christopher Couch
@@ -16,8 +16,11 @@ Description: Having Fun with Fun!
         Installation
         -------------
         
-        To install locally in 'editable mode' with all dependencies, clone the `GitHub repo`_
-        and run:
+        To install normally:
+        
+            ``$ pip install fun-supergus``
+        
+        To install locally in 'editable mode', clone the `GitHub repo`_ and run:
         
             ``$ pip install -e /path/to/package/fun``
         
@@ -34,6 +37,11 @@ Description: Having Fun with Fun!
         
         The communications module requires an email account to establish an SMTP session.
         You must configure the credentials listed at the top of ``fun/communications/communicator.py``.
+        
+        If you installed normally, you must navigate to the site-packages library of your current
+        Python environment and edit the file.
+        
+        If you installed in editable mode, you may prefer to edit the cloned repo using your favorite IDE.
         
         Package Contents
         ----------------
