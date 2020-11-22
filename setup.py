@@ -29,7 +29,7 @@ setuptools.setup(
         'Intended Audience :: Developers',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Programming Language :: Python :: 3.7',
-        'License:: OSI Approved:: MIT',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Development Status :: 4 - Beta',
         'Natural Language :: English',

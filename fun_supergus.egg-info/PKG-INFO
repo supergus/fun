@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: fun-supergus
-Version: 0.0.1
+Version: 2020.11
 Summary: Toolkit for various fun and useful tasks
 Home-page: https://github.com/supergus/fun
 Author: Christopher Couch
@@ -123,9 +123,9 @@ Platform: UNKNOWN
 Classifier: Intended Audience :: Developers
 Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
 Classifier: Programming Language :: Python :: 3.7
-Classifier: License :: MIT
+Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Classifier: Development Status :: 3 - Alpha
+Classifier: Development Status :: 4 - Beta
 Classifier: Natural Language :: English
 Requires-Python: >=3.7
 Description-Content-Type: text/x-rst
