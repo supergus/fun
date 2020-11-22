@@ -12,7 +12,7 @@ setuptools.setup(
 
     # Mandatory fields
     name='fun-supergus',
-    version='0.0.1',
+    version='2020.11',
     packages=setuptools.find_packages(),    # Builds & wheels are limited to pkgs specified here
 
     # Optional fields
@@ -29,9 +29,9 @@ setuptools.setup(
         'Intended Audience :: Developers',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
         'Programming Language :: Python :: 3.7',
-        'License :: MIT',
+        'License:: OSI Approved:: MIT',
         'Operating System :: OS Independent',
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Natural Language :: English',
     ],
 
