@@ -12,11 +12,19 @@ and run:
 
     ``$ pip install -e /path/to/package/fun``
 
-Contact `me`_ if you have any questions. This is a fun project (obviously!) and I cannot
+The package does not have any dependencies and was tested with Python 3.7.
+
+Contact `me`_ if you have any questions. This is a project just for fun (obviously!) and I cannot
 guarantee a response, sorry.
 
 .. _GitHub repo: https://github.com/supergus/fun
 .. _me: mailto:christopher.couch@gmail.com
+
+Configuration
+-------------
+
+The communications module requires an email account to establish an SMTP session.
+You must configure the credentials listed at the top of ``fun/communications/communicator.py``.
 
 Package Contents
 ----------------
@@ -29,12 +37,6 @@ The ``fun`` repository contains three folders:
 
 After importing ``fun`` into your code, the utilities should be called directly using
 ``fun.<function>``. See examples below.
-
-Caution
--------
-
-The communications module requires an email account to establish an SMTP session.
-You must configure the credentials listed at the top of ``fun/communications/communicator.py``.
 
 How to Have Fun with E.T.'s Communicator!
 -----------------------------------------
