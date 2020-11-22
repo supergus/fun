@@ -12,7 +12,7 @@ setuptools.setup(
 
     # Mandatory fields
     name='fun-supergus',
-    version='0.1.2',
+    version='0.1.3',
     packages=setuptools.find_packages(),    # Builds & wheels are limited to pkgs specified here
 
     # Optional fields
